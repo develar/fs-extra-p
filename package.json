@@ -1,0 +1,38 @@
+{
+  "name": "fs-extra-p",
+  "version": "0.0.1",
+  "description": "fs-extra module promisified with bluebird",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "bluebird": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "keywords": [
+    "fs",
+    "file",
+    "file system",
+    "copy",
+    "directory",
+    "extra",
+    "mkdirp",
+    "mkdir",
+    "mkdirs",
+    "recursive",
+    "json",
+    "read",
+    "write",
+    "extra",
+    "delete",
+    "remove",
+    "touch",
+    "create",
+    "text",
+    "output",
+    "move",
+    "promise",
+    "bluebird"
+  ]
+}
