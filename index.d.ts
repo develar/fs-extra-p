@@ -10,8 +10,20 @@ export function createOutputStream(path: string, options?: {
   mode?: number
 }): WriteStream
 
+export interface CopyOptions {
+  clobber?: boolean
+  filter?: RegExp | ((path: string) => boolean)
+}
+
+export interface MoveOptions {
+  clobber?: boolean
+  limit?: number
+}
+
 export function copy(src: string, dest: string, options?: CopyOptions): Promise<string>
 export function copySync(src: string, dest: string, options?: CopyOptions): Promise<void>
+
+export function move(src: string, dest: string, options?: MoveOptions): Promise<any>
 
 export function ensureFile(path: string): Promise<void>
 export function ensureFileSync(path: string): void
@@ -31,14 +43,18 @@ export function outputFileSync(file: string, data: any): void
 export function outputJson(file: string, data: any): Promise<void>
 export function outputJsonSync(file: string, data: any): void
 
-export function readJson(file: string, options?: OpenOptions): Promise<void>
+export function readJson(file: string, options?: OpenOptions): Promise<any>
 export function readJsonSync(file: string, options?: OpenOptions): any
 
 export function remove(dir: string): Promise<void>
 export function removeSync(dir: string): void
 
-export function writeJson(file: string, object: any, options?: OpenOptions): Promise<void>
-export function writeJsonSync(file: string, object: any, options?: OpenOptions): void
+interface JsonOptions extends OpenOptions {
+  spaces: number
+}
+
+export function writeJson(file: string, object: any, options?: JsonOptions): Promise<void>
+export function writeJsonSync(file: string, object: any, options?: JsonOptions): void
 
 export function rename(oldPath: string, newPath: string): Promise<string>
 export function renameSync(oldPath: string, newPath: string): void
@@ -158,8 +174,4 @@ export interface OpenOptions {
 export interface CreateDirOptions {
   fs?: any
   mode?: number
-}
-
-export interface CopyOptions {
-  filter: RegExp | ((path: string) => boolean)
 }

@@ -1,15 +1,17 @@
 {
   "name": "fs-extra-p",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "fs-extra module promisified with bluebird",
   "main": "index.js",
   "license": "MIT",
-  "peerDependencies": {
-    "bluebird": "^3.3.3"
+  "dependencies": {
+    "bluebird": "^3.3.3",
+    "fs-extra": "^0.26"
   },
   "engines": {
     "node": ">=0.4.0"
   },
+  "repository": "develar/fs-extra-p",
   "keywords": [
     "fs",
     "file",

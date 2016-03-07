@@ -33,7 +33,7 @@ function makeFs(Promise) {
 
   for (let methodName of Object.keys(fsExtra)) {
     const method = fsExtra[methodName]
-    if (method === "createFile" || method === "copy" || method === "rename" || method === "mkdirp") {
+    if (methodName === "createFile" || methodName === "copy" || methodName === "rename" || methodName === "mkdirp") {
       continue
     }
 

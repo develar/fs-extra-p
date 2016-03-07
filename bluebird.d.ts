@@ -1,9 +1,4 @@
-// Type definitions for bluebird 2.0.0
-// Project: https://github.com/petkaantonov/bluebird
-// Definitions by: Bart van der Schoor <https://github.com/Bartvds>, falsandtru <https://github.com/falsandtru>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
-
-declare module 'bluebird' {
+declare module "bluebird" {
   interface Disposer {
   }
 
@@ -13,6 +8,10 @@ declare module 'bluebird' {
     static config(options: any): void
 
     static all<T>(values: Iterable<T | PromiseLike<T>>): BluebirdPromise<T[]>
+
+    static all<T>(values: Iterable<T | PromiseLike<T>>): BluebirdPromise<T[]>
+
+    static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T) => BluebirdPromise<any>): BluebirdPromise<any>
 
     static mapSeries<T>(items: Iterable<T>, mapper: (item: T) => BluebirdPromise<any>): BluebirdPromise<any>
 
