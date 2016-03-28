@@ -39,8 +39,9 @@ function makeFs(Promise) {
 
     if (typeof method !== 'function' ||
         methodName.endsWith("Sync") ||
+        methodName.endsWith("Stream") ||
         methodName.match(/^[A-Z]/) ||
-        ["exists", "watch", "watchFile", "unwatchFile", "createReadStream"].indexOf(methodName) != -1) {
+        ["exists", "watch", "watchFile", "unwatchFile"].indexOf(methodName) != -1) {
       fs[methodName] = method
     }
     else {

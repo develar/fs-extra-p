@@ -127,10 +127,10 @@ export function futimesSync(fd: number, atime: number, mtime: number): void
 export function fsync(fd: number): Promise<void>
 export function fsyncSync(fd: number): void
 
-export function write(fd: number, buffer: NodeBuffer, offset: number, length: number, position: number, callback?: (err: Error, written: number, buffer: NodeBuffer) => void): void
+export function write(fd: number, buffer: NodeBuffer, offset: number, length: number, position: number, callback?: (err: Error, written: number, buffer: NodeBuffer) => void): Promise<number>
 export function writeSync(fd: number, buffer: NodeBuffer, offset: number, length: number, position: number): number
 
-export function read(fd: number, buffer: NodeBuffer, offset: number, length: number, position: number, callback?: (err: Error, bytesRead: number, buffer: NodeBuffer) => void): void
+export function read(fd: number, buffer: NodeBuffer, offset: number, length: number, position: number, callback?: (err: Error, bytesRead: number, buffer: NodeBuffer) => void): Promise<number>
 export function readSync(fd: number, buffer: NodeBuffer, offset: number, length: number, position: number): number
 
 export function readFile(filename: string, encoding: string): Promise<string>
