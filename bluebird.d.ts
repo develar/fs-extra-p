@@ -12,6 +12,8 @@ declare module "bluebird" {
     static all<T>(values: Iterable<T | PromiseLike<T>>): BluebirdPromise<T[]>
 
     static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T) => BluebirdPromise<any>): BluebirdPromise<any>
+    
+    static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T, index: number) => BluebirdPromise<any>): BluebirdPromise<any>
 
     static mapSeries<T>(items: Iterable<T>, mapper: (item: T) => BluebirdPromise<any>): BluebirdPromise<any>
 
