@@ -3,13 +3,6 @@ import { Promise } from "bluebird"
 
 export { WriteStream, createReadStream, createWriteStream, FSWatcher, Stats } from "fs"
 
-export function createOutputStream(path: string, options?: {
-  flags?: string
-  encoding?: string
-  fd?: number
-  mode?: number
-}): WriteStream
-
 export interface CopyOptions {
   clobber?: boolean
   filter?: RegExp | ((path: string) => boolean)
