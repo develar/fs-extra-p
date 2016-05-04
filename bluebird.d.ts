@@ -57,6 +57,12 @@ declare module "bluebird" {
 
     isFulfilled(): boolean
 
+    isPending(): boolean
+
+    isCancelled(): boolean
+    
+    isRejected(): boolean
+
     value(): T
   }
 
