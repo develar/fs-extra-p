@@ -5,6 +5,7 @@ export { WriteStream, createReadStream, createWriteStream, FSWatcher, Stats } fr
 
 export interface CopyOptions {
   clobber?: boolean
+  dereference?: boolean
   filter?: RegExp | ((path: string) => boolean)
 }
 

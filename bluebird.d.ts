@@ -34,7 +34,9 @@ declare module "bluebird" {
     static  promisify<T, A1, A2>(func: (arg1: A1, arg2: A2, callback: (error: Error) => void) => void, receiver?: any): (arg1: A1, arg2: A2) => BluebirdPromise<T>;
     static promisify<T, A1, A2, A3>(func: (arg1: A1, arg2: A2, arg3: A3, callback: (err: any, result: T) => void) => void, receiver?: any): (arg1: A1, arg2: A2, arg3: A3) => BluebirdPromise<T>;
     static promisify<T, A1, A2, A3, A4>(func: (arg1: A1, arg2: A2, arg3: A3, arg4: A4, callback: (err: any, result: T) => void) => void, receiver?: any): (arg1: A1, arg2: A2, arg3: A3, arg4: A4) => BluebirdPromise<T>;
+
     static promisify<T, A1, A2, A3, A4, A5>(func: (arg1: A1, arg2: A2, arg3: A3, arg4: A4, arg5: A5, callback: (err: any, result: T) => void) => void, receiver?: any): (arg1: A1, arg2: A2, arg3: A3, arg4: A4, arg5: A5) => BluebirdPromise<T>;
+
     static promisify(nodeFunction: Function, receiver?: any): Function;
 
     static resolve<T>(value: T | PromiseLike<T>): BluebirdPromise<T>
