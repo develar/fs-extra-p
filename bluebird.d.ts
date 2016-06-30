@@ -11,12 +11,10 @@ declare module "bluebird" {
 
     static config(options: any): void
 
-    static all<T>(values: Iterable<T | PromiseLike<T>>): BluebirdPromise<T[]>
-
-    static all<T>(values: Iterable<T | PromiseLike<T>>): BluebirdPromise<T[]>
+    static all<T>(values: Iterable<T | PromiseLike<T>>): BluebirdPromise<Array<T>>
 
     static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T) => BluebirdPromise<any>, opts?: MapOptions): BluebirdPromise<any>
-    
+
     static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T, index: number) => BluebirdPromise<any>, opts?: MapOptions): BluebirdPromise<any>
 
     static mapSeries<T>(items: Iterable<T>, mapper: (item: T) => BluebirdPromise<any>): BluebirdPromise<any>
@@ -45,6 +43,8 @@ declare module "bluebird" {
 
     static resolve<T>(value: T | PromiseLike<T>): BluebirdPromise<T>
     static resolve(): BluebirdPromise<void>
+
+    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => void): BluebirdPromise<TResult>
 
     then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => void): BluebirdPromise<TResult>
 
