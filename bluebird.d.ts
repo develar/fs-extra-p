@@ -2,6 +2,10 @@ declare module "bluebird" {
   interface Disposer {
   }
 
+  interface MapOptions {
+    concurrency: number
+  }
+
   class BluebirdPromise<T> implements Promise<T> {
     constructor(callback: (resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: Error) => void, onCancel?: (handler: () => void) => void) => void)
 
@@ -11,9 +15,9 @@ declare module "bluebird" {
 
     static all<T>(values: Iterable<T | PromiseLike<T>>): BluebirdPromise<T[]>
 
-    static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T) => BluebirdPromise<any>): BluebirdPromise<any>
+    static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T) => BluebirdPromise<any>, opts?: MapOptions): BluebirdPromise<any>
     
-    static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T, index: number) => BluebirdPromise<any>): BluebirdPromise<any>
+    static map<T>(items: Iterable<T | PromiseLike<T>>, mapper: (item: T, index: number) => BluebirdPromise<any>, opts?: MapOptions): BluebirdPromise<any>
 
     static mapSeries<T>(items: Iterable<T>, mapper: (item: T) => BluebirdPromise<any>): BluebirdPromise<any>
 
@@ -42,7 +46,7 @@ declare module "bluebird" {
     static resolve<T>(value: T | PromiseLike<T>): BluebirdPromise<T>
     static resolve(): BluebirdPromise<void>
 
-    then<R>(fulfilled: (value: T) => R | PromiseLike<R>, rejected?: (reason: any) => R | PromiseLike<R>): BluebirdPromise<R>
+    then<TResult>(onfulfilled?: (value: T) => TResult | PromiseLike<TResult>, onrejected?: (reason: any) => void): BluebirdPromise<TResult>
 
     //noinspection ReservedWordAsName
     catch(onrejected?: (reason: any) => T | PromiseLike<T>): BluebirdPromise<T>
