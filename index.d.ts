@@ -3,10 +3,13 @@ import { Promise } from "bluebird"
 
 export { WriteStream, createReadStream, createWriteStream, FSWatcher, Stats } from "fs"
 
+export type Filter = (file: string, stat: Stats) => boolean
+
 export interface CopyOptions {
   clobber?: boolean
   dereference?: boolean
-  filter?: RegExp | ((path: string) => boolean)
+  filter?: RegExp | ((file: string, stat: Stats) => boolean)
+  passStats?: boolean
 }
 
 export interface MoveOptions {
