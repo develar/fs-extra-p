@@ -3,4 +3,5 @@ BluebirdPromise.config({
   longStackTraces: true,
   cancellation: true
 })
+BluebirdPromise.default = BluebirdPromise
 module.exports = BluebirdPromise
