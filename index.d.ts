@@ -203,6 +203,10 @@ declare module "fs-extra-p" {
 
   export function existsSync(path: string): boolean
 
+  export function existsSync(path: string): boolean
+
+  export function access(path: string | NodeBuffer, mode?: number): BluebirdPromise<void>
+
   export function deleteFile(path: string, ignoreIfNotExists?: boolean): BluebirdPromise<any>
 
   export interface OpenOptions {
