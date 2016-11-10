@@ -575,7 +575,7 @@ declare module "bluebird-lst-c" {
     static filter<R>(values: Bluebird.Thenable<R>[], filterer: (item: R, index: number, arrayLength: number) => boolean | Bluebird.Thenable<boolean>, option?: Bluebird.ConcurrencyOption): Bluebird<R[]>;
 
     // array with values
-    static filter<R>(values: R[], filterer: (item: R, index: number, arrayLength: number) => boolean | Bluebird.Thenable<boolean>, option?: Bluebird.ConcurrencyOption): Bluebird<R[]>;
+    static filter<R>(values: Array<R> | Iterable<R>, filterer: (item: R, index: number, arrayLength: number) => boolean | Bluebird.Thenable<boolean>, option?: Bluebird.ConcurrencyOption): Bluebird<R[]>;
 
     /**
      * Iterate over an array, or a promise of an array, which contains promises (or a mix of promises and values) with the given iterator function with the signature (item, index, value) where item is the resolved value of a respective promise in the input array. Iteration happens serially. If any promise in the input array is rejected the returned promise is rejected as well.
