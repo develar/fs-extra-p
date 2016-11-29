@@ -1,6 +1,6 @@
 {
   "name": "fs-extra-p",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "description": "fs-extra module promisified with bluebird",
   "main": "index.js",
   "license": "MIT",

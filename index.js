@@ -1,6 +1,6 @@
 "use strict"
 
-const fsExtra = require("fs-extra-tf")
+const fsExtra = require("fs-extra")
 const Promise = require('bluebird-lst-c')
 
 // returns new name

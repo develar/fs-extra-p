@@ -133,6 +133,8 @@ declare module "fs-extra-p" {
 
   export function mkdirSync(path: string, mode?: string | number): void
 
+  export function mkdtemp(prefix: string): Promise<string>
+
   export function readdir(path: string): Promise<string[]>
 
   export function close(fd: number): Promise<void>
