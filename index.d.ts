@@ -5,14 +5,14 @@ declare module "fs-extra-p" {
   export type Filter = (file: string, stat: Stats) => boolean
 
   export interface CopyOptions {
-    clobber?: boolean
+    overwrite?: boolean
     dereference?: boolean
     filter?: RegExp | ((file: string, stat: Stats) => boolean)
     passStats?: boolean
   }
 
   export interface MoveOptions {
-    clobber?: boolean
+    overwrite?: boolean
     limit?: number
   }
 
@@ -42,7 +42,7 @@ declare module "fs-extra-p" {
 
   export function outputFileSync(file: string, data: any): void
 
-  export function outputJson(file: string, data: any): Promise<void>
+  export function outputJson(file: string, data: any, options?: JsonOptions): Promise<void>
 
   export function outputJsonSync(file: string, data: any): void
 
