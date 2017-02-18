@@ -1,7 +1,7 @@
 "use strict"
 
 const fsExtra = require("fs-extra")
-const Promise = require('bluebird-lst-c')
+const Promise = require('bluebird-lst')
 
 // returns new name
 function rename(oldPath, newPath) {

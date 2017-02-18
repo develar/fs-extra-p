@@ -31,7 +31,7 @@
  *   THE SOFTWARE.
  */
 
-declare module "bluebird-lst-c" {
+declare module "bluebird-lst" {
   class Bluebird<R> implements Bluebird.Thenable<R>, Bluebird.Inspection<R>, Promise<R> {
     [Symbol.toStringTag]: any
 
