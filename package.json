@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird-lst": "^1.0.2",
-    "fs-extra": "^4.0.0"
+    "fs-extra": "^4.0.1"
   },
   "engines": {
     "node": ">=4.0.0"
