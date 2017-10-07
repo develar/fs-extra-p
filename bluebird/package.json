@@ -1,6 +1,6 @@
 {
   "name": "bluebird-lst",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bluebird — longStackTraces: true, cancellation: true",
   "author": "Vladimir Krivosheev",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "index.*"
   ],
   "dependencies": {
-    "bluebird": "^3.5.0"
+    "bluebird": "^3.5.1"
   },
   "typings": "./index.d.ts"
 }
