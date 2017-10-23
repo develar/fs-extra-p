@@ -152,7 +152,7 @@ export function fsync(fd: number): Promise<void>
 
 export function fsyncSync(fd: number): void
 
-export function write(fd: number, buffer: Buffer, offset: number, length: number, position: number, callback?: (err: Error, written: number, buffer: Buffer) => void): Promise<number>
+export function write(fd: number, buffer: Buffer, offset?: number, length?: number, position?: number, callback?: (err: Error, written: number, buffer: Buffer) => void): Promise<number>
 
 export function writeSync(fd: number, buffer: Buffer, offset: number, length: number, position: number): number
 

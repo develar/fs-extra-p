@@ -1,6 +1,6 @@
 {
   "name": "bluebird-lst",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Bluebird — longStackTraces: true, cancellation: true",
   "author": "Vladimir Krivosheev",
   "license": "MIT",
