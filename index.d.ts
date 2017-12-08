@@ -21,6 +21,8 @@ export function copyFile(src: string, dest: string): Promise<void>
 
 export function move(src: string, dest: string, options?: MoveOptions): Promise<void>
 
+export function moveSync(src: string, dest: string, options?: MoveOptions): void
+
 export function ensureFile(path: string): Promise<void>
 
 export function ensureFileSync(path: string): void
