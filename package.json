@@ -1,12 +1,12 @@
 {
   "name": "fs-extra-p",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "fs-extra module promisified with bluebird",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "bluebird-lst": "^1.0.8",
-    "fs-extra": "^8.0.0"
+    "bluebird-lst": "^1.0.9",
+    "fs-extra": "^8.0.1"
   },
   "engines": {
     "node": ">=8.6"
