@@ -45,7 +45,9 @@ newFs.emptyDir = function (dir) {
           .catch(reject)
       }
       else {
-        reject(error)
+        newFs.mkdirs(dir)
+          .then(resolve)
+          .catch(reject)
       }
     })
   })
